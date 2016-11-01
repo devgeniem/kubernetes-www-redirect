@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: www-redirect-bare-domains
+spec:
+  backend:
+    serviceName: nginx
+    servicePort: 80
+
