@@ -29,11 +29,9 @@ http {
     set_real_ip_from ${NGINX_TRUSTED_IP};
 
     # Use minimal logging
-    log_format proxied '[$time_local] $status $realip_remote_addr $http_host "$request" "$http_user_agent"';
+    log_format proxied '[$time_local] $status $remote_addr $http_host "$request" "$http_user_agent" $http_x_forwarded_for';
 
     server {
-
-        add_header X-Was-Forwarded $http_x_forwarded_for;
 
         listen ${NGINX_PORT} default_server;
         access_log /dev/stdout proxied;
