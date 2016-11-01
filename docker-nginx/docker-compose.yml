@@ -2,3 +2,5 @@ nginx:
   build: .
   ports:
     - 13337:80
+  environment:
+    NGINX_TRUSTED_IP: 172.17.0.1
