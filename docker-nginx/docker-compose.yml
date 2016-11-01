@@ -1,0 +1,4 @@
+nginx:
+  build: .
+  ports:
+    - 13337:80
