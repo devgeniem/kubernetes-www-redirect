@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:stable-alpine
 MAINTAINER Onni Hakala <onni.hakala@geniem.com>
 
 # Minimal nginx redirect config
