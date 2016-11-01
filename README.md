@@ -50,7 +50,7 @@ $ gcloud container clusters create $CLUSTER_NAME --zone $ZONE
 
 Create nginx containers which redirect any request:
 ```
-$ kubectl run www-redirect-nginx --image=devgeniem/nginx-www-redirect --port=80
+$ kubectl run www-redirect-nginx --image=devgeniem/nginx-www-redirect:1.1 --port=80
 ```
 
 Create a Container Engine service which exposes this nginx Pod on each node in your cluster
