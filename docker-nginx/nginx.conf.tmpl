@@ -21,15 +21,12 @@ http {
     real_ip_header X-Forwarded-For;
     real_ip_recursive on;
 
-    # Trust Google cloud europe-west1 for X-Forwarded-For header
-    set_real_ip_from 10.132.0.0/20;
-
     # Our ingress IP was in this range
     # Google overrides original
     set_real_ip_from ${NGINX_TRUSTED_IP};
 
     # Use minimal logging
-    log_format proxied '[$time_local] $status $remote_addr $http_host "$request" "$http_user_agent" $http_x_forwarded_for';
+    log_format proxied '[$time_local] $status $remote_addr $http_host "$request" "$http_user_agent"';
 
     server {
 
